@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TaskPro - Advanced To-Do App</title>
+    <link rel="stylesheet" href="Style.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<div class="app">
+
+    <!-- Glass Header -->
+    <div class="glass-header">
+    <div class="logo">
+        <i class="fa-solid fa-list-check"></i>
+        <span>TaskPro</span>
+    </div>
+
+    <div class="header-right">
+        <!-- Dark Mode Toggle -->
+        <button id="darkToggle" class="dark-toggle">
+            <i class="fa-solid fa-moon"></i>
+        </button>r̥
+
+        <!-- Progress Circle -->
+        <div class="progress-circle">
+            <svg>
+                <circle cx="35" cy="35" r="30"></circle>
+                <circle cx="35" cy="35" r="30" id="progress"></circle>
+            </svg>
+                <div class="progress-text" id="progressText">0%</div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Main Card -->
+    <div class="container">
+
+        <!-- Search -->
+        <input type="text" id="searchInput" placeholder="🔍 Search tasks...">
+
+        <!-- Input -->
+        <div class="input-box">
+            <input type="text" id="taskInput" placeholder="Enter task">
+            <input type="date" id="dateInput">
+        </div>
+
+        <!-- Counter -->
+        <div class="counter">
+            Total: <span id="totalCount">0</span> |
+            Done: <span id="doneCount">0</span>
+        </div>
+
+        <!-- Task List -->
+        <ul id="taskList"></ul>
+
+        <div class="export-btns">
+            <button onclick="exportCSV()">Export CSV</button>
+            <button onclick="exportPDF()">Export PDF</button>
+        </div>
+    </div>
+
+        
+
+    <!-- Floating Add Button -->
+    <button class="fab" onclick="addTask()">
+        <i class="fa-solid fa-plus"></i>
+    </button>
+
+</div>
+
+<script src="Script.js"></script>
+</body>
+</html>

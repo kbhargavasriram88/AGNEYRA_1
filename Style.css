@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* BACKGROUND */
+body {
+    min-height: 100vh;
+    background: linear-gradient(-45deg, #667eea, #764ba2, #43cea2, #185a9d);
+    background-size: 400% 400%;
+    animation: gradientBG 12s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* APP */
+.app {
+    width: 420px;
+    position: relative;
+}
+
+/* HEADER */
+.glass-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 20px;
+    border-radius: 20px 20px 0 0;
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(15px);
+    color: white;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* HEADER RIGHT */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* DARK TOGGLE */
+.dark-toggle {
+    background: rgba(255,255,255,0.3);
+    border: none;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dark-toggle:hover {
+    background: rgba(255,255,255,0.5);
+}
+
+/* PROGRESS */
+.progress-circle {
+    position: relative;
+    width: 70px;
+    height: 70px;
+}
+
+.progress-circle svg {
+    width: 70px;
+    height: 70px;
+    transform: rotate(-90deg);
+}
+
+.progress-circle circle {
+    fill: none;
+    stroke-width: 8;
+    stroke: rgba(255,255,255,0.3);
+}
+
+#progress {
+    stroke: #2ecc71;
+    stroke-dasharray: 188;
+    stroke-dashoffset: 188;
+    transition: 0.5s;
+}
+
+.progress-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+/* MAIN */
+.container {
+    padding: 25px;
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(15px);
+    border-radius: 0 0 20px 20px;
+}
+
+#searchInput, #taskInput, #dateInput {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+}
+
+.input-box {
+    display: flex;
+    gap: 8px;
+}
+
+/* COUNTER */
+.counter {
+    margin-bottom: 10px;
+    color: white;
+    font-weight: 500;
+}
+
+/* TASK LIST */
+ul {
+    list-style: none;
+}
+
+li {
+    background: rgba(255,255,255,0.9);
+    padding: 14px;
+    margin-bottom: 12px;
+    border-radius: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+    transition: 0.3s;
+}
+
+li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+li span {
+    cursor: pointer;
+}
+
+/* COMPLETED */
+.completed {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.date {
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+/* BUTTONS */
+.task-btns i {
+    margin-left: 12px;
+    cursor: pointer;
+}
+
+.task-btns .delete { color: red; }
+.task-btns .check { color: green; }
+.task-btns .fa-pen { color: #3498db; }
+.task-btns .fa-thumbtack { color: #f39c12; }
+
+/* INLINE EDIT */
+.edit-input {
+    width: 100%;
+    padding: 6px 8px;
+    border-radius: 8px;
+    border: 1px solid #aaa;
+}
+
+/* TOAST */
+.toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    display: flex;
+    gap: 15px;
+}
+
+.toast button {
+    background: none;
+    border: none;
+    color: #2ecc71;
+    cursor: pointer;
+}
+
+/* FAB */
+.fab {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* DARK MODE */
+body.dark {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+
+body.dark .glass-header,
+body.dark .container {
+    background: rgba(40,40,40,0.85);
+    color: white;
+}
+
+body.dark li {
+    background: rgba(60,60,60,0.95);
+    color: white;
+}
+
+/* ===== FIX: DARK MODE TASK CARDS ===== */
+body.dark li {
+    background: rgba(45, 45, 45, 0.95);
+    color: #ffffff;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+body.dark li:hover {
+    background: rgba(55, 55, 55, 1);
+}
+body.dark input {
+    background: rgba(60,60,60,0.9);
+    color: white;
+}
+
+body.dark input::placeholder {
+    color: #bbb;
+}
+body.dark .progress-text {
+    color: white;
+}
+input:focus, button:focus {
+    outline: 2px solid #2ecc71;
+    outline-offset: 2px;
+}
+
+.overdue {
+    border-left: 6px solid #e74c3c;
+    background: #ffeaea;
+}
+
+body.dark .overdue {
+    background: rgba(120, 40, 40, 0.4);
+}
+
+/* ===== MOBILE OPTIMIZATION ===== */
+@media (max-width: 480px) {
+    .app {
+        width: 95%;
+    }
+
+    .glass-header {
+        padding: 14px;
+    }
+
+    .logo span {
+        font-size: 16px;
+    }
+
+    .progress-circle {
+        width: 60px;
+        height: 60px;
+    }
+
+    .progress-circle svg {
+        width: 60px;
+        height: 60px;
+    }
+
+    .fab {
+        width: 48px;
+        height: 48px;
+        font-size: 24px;
+        bottom: 16px;
+        right: 16px;
+    }
+
+    .input-box {
+        flex-direction: column;
+    }
+}
+
+.export-btns {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.export-btns button {
+    flex: 1;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+/* ===== DARK MODE BUTTON COLORS ===== */
+body.dark .export-btns button {
+    background: linear-gradient(135deg, #3b82f6, #1e40af);
+    color: white;
+}
+
+body.dark .export-btns button:hover {
+    opacity: 0.9;
+}
+
+body.dark .fab {
+    background: linear-gradient(135deg, #22c55e, #15803d);
+}
+
+body.dark .dark-toggle {
+    background: rgba(255,255,255,0.15);
+    color: #facc15; /* soft yellow */
+}
+
+.pinned {
+    border-left: 6px solid #f39c12;
+}
