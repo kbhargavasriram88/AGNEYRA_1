@@ -33,7 +33,7 @@ _No server or installation required._
 
 ## 👨‍💻 Author
 
-**Bhargav**  
+**K.Bhargava Sri Ram**  
 B.Tech CSE (AI & ML)  
 Frontend Developer | Internship-ready project
 
@@ -42,3 +42,4 @@ Frontend Developer | Internship-ready project
 ## 📄 License
 
 This project is open-source and free to use for **learning, academic assignments, and portfolio purposes**.
+
